@@ -1,0 +1,25 @@
+#this is the solution code i came up with!!
+
+
+class Solution:
+    def countAndSay(self, n: int) -> str:    
+        s = "1"        
+        for q in range(n-1):     
+            print(s)
+            s_new = ''
+            i = 0
+            while i < len(s):                
+                c = 1
+                j = i+1
+                while j < len(s):
+                    if s[j] == s[i]:
+                        c += 1
+                    else:
+                        break                      
+                    j += 1
+                                
+                s_new += (str(c) + s[i])
+                i = j                
+            s = s_new
+
+        return s
